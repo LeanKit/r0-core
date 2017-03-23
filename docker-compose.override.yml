@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  r0-core.service:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
