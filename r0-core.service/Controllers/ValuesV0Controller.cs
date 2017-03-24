@@ -6,7 +6,7 @@ namespace r0_core.service.Controllers
 {
     [ApiVersion("0.0")]
     [Route("api/v{version:apiVersion}/values")]
-    [Route("api/[controller]")]
+    [Route("api/values")]
     public class ValuesV0Controller : Controller
     {
         private readonly ILogger<ValuesV0Controller> _logger;
@@ -19,7 +19,6 @@ namespace r0_core.service.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _logger.LogWarning("Entering Get for Values controller");
             return new[] { "value1", "value2" };
         }
 

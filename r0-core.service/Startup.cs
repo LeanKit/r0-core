@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using App.Metrics;
 using Serilog;
 using Serilog.Formatting.Compact;
 using Serilog.Formatting.Json;
@@ -34,7 +35,7 @@ namespace r0_core.service
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc(options => options.AddMetricsResourceFilter());
             services.AddApiVersioning(options =>
             {
                 options.ApiVersionReader = new QueryStringOrHeaderApiVersionReader("X-LK-API-VERSION");
@@ -58,7 +59,7 @@ namespace r0_core.service
             loggerFactory.AddSerilog();
 
             app.UseMetrics();
-
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
