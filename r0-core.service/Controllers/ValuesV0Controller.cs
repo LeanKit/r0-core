@@ -4,12 +4,14 @@ using Microsoft.Extensions.Logging;
 
 namespace r0_core.service.Controllers
 {
+    [ApiVersion("0.0")]
+    [Route("api/v{version:apiVersion}/values")]
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ValuesV0Controller : Controller
     {
-        private readonly ILogger<ValuesController> _logger;
+        private readonly ILogger<ValuesV0Controller> _logger;
 
-        public ValuesController(ILogger<ValuesController> logger)
+        public ValuesV0Controller(ILogger<ValuesV0Controller> logger)
         {
             _logger = logger;
         }
@@ -17,7 +19,7 @@ namespace r0_core.service.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            _logger.LogDebug("Entering Get for Values controller");
+            _logger.LogWarning("Entering Get for Values controller");
             return new[] { "value1", "value2" };
         }
 

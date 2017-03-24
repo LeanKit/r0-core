@@ -8,13 +8,13 @@ namespace r0_core.service.tests.Unit
 {
     public class ValuesControllerTests
     {
-        private readonly ValuesController _service;
+        private readonly ValuesV0Controller _service;
 
-        private readonly ILogger<ValuesController> _logger = new Mock<ILogger<ValuesController>>().Object;
+        private readonly ILogger<ValuesV0Controller> _logger = new Mock<ILogger<ValuesV0Controller>>().Object;
 
         public ValuesControllerTests()
         {
-            _service = new ValuesController(_logger);
+            _service = new ValuesV0Controller(_logger);
         }
 
         [Fact(DisplayName = "Get() method in ValuesController returns a string array with two elements")]
