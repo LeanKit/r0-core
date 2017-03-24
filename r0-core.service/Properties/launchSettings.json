@@ -19,14 +19,14 @@
     "r0_core.service": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/v0/values",
       "environmentVariables": {
         "Serilog:Properties:Application": "r0-core",
-        "ASPNETCORE_URLS": "http://localhost:5124",
+        "ASPNETCORE_URLS": "http://+:5000",
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "Serilog:MinimumLevel": "Debug"
+        "Serilog:MinimumLevel": "Warning"
       },
-      "applicationUrl": "http://localhost:5124"
+      "applicationUrl": "http://localhost:5000"
     }
   }
 }
