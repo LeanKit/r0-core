@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -19,11 +19,14 @@
     "r0_core.service": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/v0/values",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "Serilog:Properties:Application": "r0-core",
+        "ASPNETCORE_URLS": "http://+:5000",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Serilog:MinimumLevel": "Warning"
       },
-      "applicationUrl": "http://localhost:53837"
+      "applicationUrl": "http://localhost:5000"
     }
   }
 }

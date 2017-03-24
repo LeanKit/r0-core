@@ -1,16 +1,26 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace r0_core.service.Controllers
 {
+    [ApiVersion("0.0")]
+    [Route("api/v{version:apiVersion}/values")]
     [Route("api/[controller]")]
-    public class ValuesController : Controller
+    public class ValuesV0Controller : Controller
     {
+        private readonly ILogger<ValuesV0Controller> _logger;
+
+        public ValuesV0Controller(ILogger<ValuesV0Controller> logger)
+        {
+            _logger = logger;
+        }
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            _logger.LogWarning("Entering Get for Values controller");
+            return new[] { "value1", "value2" };
         }
 
         // GET api/values/5
